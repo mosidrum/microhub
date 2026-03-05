@@ -1,15 +1,13 @@
 import type { ApiResponse } from '../types';
 
-export function createApiResponse<T>(
-  success: boolean,
-  data?: T,
-  message?: string,
-  error?: string
-): ApiResponse<T> {
-  return {
-    success,
-    data,
-    error,
-    message,
-  };
-}
+export const createApiResponse = <T>({
+  success,
+  data,
+  message,
+  error,
+}: ApiResponse<T>): ApiResponse<T> => ({
+  success,
+  data,
+  message,
+  error,
+});
